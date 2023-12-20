@@ -1,0 +1,16 @@
+meta {
+  name: Demonstrate bug
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://example.com/test
+  body: none
+  auth: none
+}
+
+headers {
+  X-from-process-env: <<{{process.env.MY_SECRET}}>>
+  X-from-environment: <<{{my-secret}}>>
+}
